@@ -1,0 +1,258 @@
+/*----------------------------------------------container and body---------------------------------------------*/
+#container{
+  margin: auto; /*center page*/
+  width: 70%; /*width of the page*/
+	background-color: #9DB9E7; /*background color of the div(container)*/
+	border: 10px solid #9DB9E7; /*setting border (width/ style/color)*/
+  font-family: sans-serif; /*font of the div(container)*/
+}
+
+body{background-color: #ffffff; } /*body background color*/
+
+/*---------------------------------------------header----------------------------------------------*/
+
+#header{
+	height: 110px; /*setting height of the div(header)*/
+  background-repeat: repeat-x; /*repeats image*/
+  background-image: url("../images/header.jpeg"); /*set a image as a background of the div(header)*/
+  background-size: auto 110px; /*setting width and height of the background image*/
+}
+
+#logo {
+  float:left; /*float(left) the div(logo)*/
+  margin-top: 10px; /*setting a margin(top) for div(logo)*/
+  margin-left: 15px; /*setting a margin(left) for div(logo)*/
+}
+
+/*---------------------------------------------nav (menu options)--------------------------------------------------*/
+
+.topnav {
+  /*if content overflows an element's box
+  overflow is clipped, and the rest of the content is hidden 
+  for div(topnav)*/
+  overflow: hidden; 
+  background-color: #090C9B; /*background color of div(topnav)*/
+}
+
+.topnav a {
+  float: left; /*float(left)*/
+  color: #ffffff; /*setting color*/
+  padding: 14px 16px; /*top and bottom paddings are 14px / right and left paddings are 16px*/
+  text-decoration: none; /*remove underlines from links*/
+  font-size: 17px; /*font size*/
+}
+
+.dropdown {
+  float: left; /*float left*/
+  /*if content overflows an element's box
+  overflow is clipped, and the rest of the content is hidden 
+  for div(dropdown)*/
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;   /*font size*/ 
+  border: none; /*no border*/ 
+  color: #ffffff; /*setting color*/
+  padding: 14px 16px; /*top and bottom paddings are 14px / right and left paddings are 16px*/
+  background-color: inherit; /*(.dropdown .dropbtn)should inherit the backgroung color value from its parent element.*/
+  font-family: inherit; /*(.dropdown .dropbtn)should inherit the font value from its parent element.*/
+}
+
+.dropdown-content {
+  display: none; /*do not display dropdown content*/
+  position: absolute; /*position absolute*/
+  background-color: #ffffff; /*set background color*/
+  min-width: 160px; /*set minimun width*/
+  box-shadow: 0px 8px 16px 0px #00000033; /*add drop shadow to the box (length and color shadow) */
+}
+
+.dropdown-content a {
+  float: none; /*do not float*/
+  color: #000000; /*setting color*/
+  padding: 12px 16px; /*top and bottom paddings are 12px / right and left paddings are 16px*/
+  text-decoration: none; /*remove underlines from links*/
+  display: block; /*display in block*/
+  text-align: left; /*align text on the left*/
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #b5c5ed; /*set background color when hover a link*/
+}
+
+.dropdown-content a:hover {
+  background-color: #b5c5ed; /*set background color when hover a link*/
+  color: #000000; /*setting color*/
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /*display in block*/
+}
+
+.active a:active { /* pseudo-classes - color of navegation links on the left when the link is visited*/
+  background-color: #9DB9E7;
+}
+
+/*----------------------------------------------Content---------------------------------------------*/
+
+.content{
+  padding: 20px; /*setting padding for div(content)*/
+	min-height: 400px; /*setting a minimum height for div(content)*/
+}
+
+.content h2{
+  margin:0%;
+}
+
+.content a {
+  color: black;
+  text-decoration: none; /*remove underlines from links*/
+}
+
+#testimonialH2 h2, #enquiriesH2 h2 {
+  padding-bottom: 16px;
+}
+
+.newrow{
+  overflow: hidden; 
+  margin-left: 3%; 
+}
+
+.col {
+  width: 30%; /*set with of column the div(col)*/
+  float: left;  /*float(left) the div(col)*/
+  margin-right: 3%; /*setting margin on the right*/
+}
+
+.card {
+  background-color: white; 
+  text-align: center;
+  min-height: 400px;
+}
+
+#img{
+  height: 200px;
+}
+
+hr{
+  margin: 1px;
+}
+
+.card-body{
+  padding: 5px;
+}
+
+.dataTable {
+  table-layout: fixed;
+  width: 100% !important;
+}
+
+.table th {
+  background-color: #090C9B;
+  color: #ffffff;
+  border: 2px solid #9DB9E7;
+  padding: 5px;
+}
+
+.table td {
+  background-color: #ffffff;
+  border: 2px solid #9DB9E7;
+  padding: 5px 10px 5px 10px;
+}
+
+.form label{
+  float:left;
+  width:50px;
+  padding-right:15px;
+}
+
+.form input{
+  width:248px;
+  margin-bottom: 3px;
+}
+
+#mysubmit{
+  margin-left: 65px;
+  width:100px;
+}
+
+#companyContact {
+  margin-right: 5px;
+}
+#companyContact a {
+  color:#090C9B;
+}
+
+#companyLocationImg {
+  float: right;
+  width: 250px;
+  height: 150px;
+  padding-right: 300px;
+}
+
+.loginForm {
+  text-align:center;
+  margin: 100px auto;
+  padding: 17px 20px 25px 20px;
+  width: 200px;
+  background:url(../images/login.jpeg) 0 0 no-repeat;
+}
+
+.loginForm input{
+  border: none;
+}
+
+.adminLoggedIn a, .adminLoggedIn button{
+  width:150px;
+  color: #000000;
+  height: 30px;
+}
+
+#logout button, #logout a{
+  color:#ffffff;
+  background-color: #090C9B;
+  width: 150px;
+}
+
+.manageForm label {
+  color: #ffffff;
+  background-color: #090C9B;
+  width:83px;
+  margin-right:5px;
+  padding: 1.5px;
+}
+
+.managePropertyForm label{
+  color: #ffffff;
+  background-color: #090C9B;
+  width:90px;
+  margin-right:5px;
+  padding: 1.5px;
+}
+
+.managePropertyForm textarea{
+  width: 248px;
+}
+
+#updateButton{
+  margin-left: 91px;
+  width:100px;
+}
+
+/*----------------------------------------------footer---------------------------------------------*/
+#footer{
+  background-color: #090C9B; /*set background color*/
+  color: #ffffff; /*setting color*/
+  height: 30px; /*setting height*/
+  margin-top: 25px;
+  padding: 10px; /*Set the padding for all four sides*/
+}
+
+#facebookLogo{
+  float:right; /*float(left) the div(facebookLogo)*/
+  margin-left: 15px; /*setting a margin(left) for div(facebookLogo)*/
+}
+
+#InstagramLogo{
+  float:right; /*float(left) the div(facebookLogo)*/
+}
