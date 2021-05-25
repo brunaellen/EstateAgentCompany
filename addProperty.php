@@ -31,12 +31,27 @@
           <label >Image:</label>
           <input type="text" name="image" required="required"><br>
 
-          <label>Category Id:</label>
-          <input type="number" name="categoryid" required="required"><br>
+          <label for="category">Category:</label>
+          <select id="category" name="categoryid" required="required">
+            <option value="1">Residential</option>
+            <option value="2">Commercial</option>
+            <option value="3">Sites</option>
+          </select><br>
 
-          <label>Vendor Id:</label>
-          <input type="number" name="vendorid" required="required"><br>
-          
+          <label>Vendor:</label>
+          <select id="vendor" name="vendorid" required="required">
+            <?php
+              require 'connect.php';
+              $sql="SELECT * from vendor ORDER BY firstname";
+              $result=mysqli_query($link, $sql); 
+              while($row=mysqli_fetch_array($result)){
+                $vendorid = $row["vendorid"];
+                $vendorFirstName = $row["firstname"];
+                $vendorSurname = $row["surname"];
+                echo "<option value=\"$vendorid\">$vendorFirstName $vendorSurname</option>";
+              }
+            ?>
+          </select><br>
           <input type="submit" id="updateButton" name="addProperty" value="Add Property" required="required">
         </form>
       </div>

@@ -9,12 +9,8 @@
   $mobile=$_POST["mobile"]; 
   $email=$_POST["email"];
   $sql_insert="INSERT INTO vendor(surname, firstname, address1, town, county, mobile, email) VALUES ('$surname', '$firstname', '$address1', '$town', '$county', '$mobile', '$email');";
-  $result=mysqli_query($link, $sql_insert); 
-  $row=mysqli_fetch_array($result);
-  $sql_retrieveId="SELECT LAST_INSERT_ID() as Id);";
-  $id=mysqli_query($link, $sql_retrieveId); 
 
-  if($result) {
+  if(mysqli_query($link, $sql_insert)) {
     header("Location: template.php?pageName=manageVendors&success=true&message=Vendor Added!"); 
       exit;
   } else {

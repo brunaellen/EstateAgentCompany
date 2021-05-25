@@ -5,6 +5,7 @@
       <?php
         require 'connect.php';
         $propertyid=$_GET['id'];
+        
         $sql="SELECT * from property where propertyid=$propertyid";
         $result=mysqli_query($link, $sql);
         echo "<h2>Delete Property</h2>";

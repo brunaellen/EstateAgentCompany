@@ -5,7 +5,7 @@
     <div id="testimonialH2"><h2>Manage Testimonials</h2></div>
     <?php
       require 'connect.php';
-      $sql="SELECT * from testimonial";
+      $sql="SELECT * from testimonial ORDER BY id ASC;";
       $result=mysqli_query($link, $sql); 
     ?>
 

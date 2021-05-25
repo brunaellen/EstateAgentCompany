@@ -1,19 +1,29 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <div id="content">
-    <h2>All Properties </h2>
-    <div id="displayProperties">
+    <?php
+      require 'connect.php';
+      $sql="SELECT * from property ";
+      $category = "All Properties";
+      if (isset($_GET["categoryid"])) {
+        $categoryId = $_GET["categoryid"];
+        $category = $_GET["name"];
+        $sql = "$sql INNER JOIN category ON category.categoryId = property.categoryId WHERE property.categoryId = $categoryId";
+      }
+    ?>
+
+    <h2><?php echo $category ?></h2>
+
       <?php
-        require 'connect.php';
-        $sql="SELECT * from property";
         $result=mysqli_query($link, $sql);
         if(mysqli_num_rows($result)>0){
-          $cols = 3; // Define number of columns you want
-          $counter = 1; // Counter used to identify if we need to start or end a row
+          $cols = 3; 
+          $counter = 1;
           while($row=mysqli_fetch_array($result)) {
-            if(($counter % $cols) == 1) { // Check if it's new row ?>
-              <br><br><!--space between rows-->
-              <div class="newrow"><!--start a new row-->
+            if(($counter % $cols) == 1) { 
+      ?>
+              <br><br>
+              <div class="newrow">
               <?php
             }
             $propertyid=$row["propertyid"];
@@ -21,41 +31,40 @@
             $shortdescription=$row["shortdescription"];
             $address1=$row["address1"];
             $price=$row["price"];?>
-              <div class="col"><!--create a column for a property-->
-                <div class="card"><!--create a styled card for a property-->
+              <div class="col">
+                <div class="card">
                     <?php
                       echo '<div id="img" style="background-image: url(\'' . $image . '\'); background-size:cover;"></div>';
                     ?>
                     <hr>
                   <div class="card-body">
                     <?php
-                      echo "<h4>$address1</h4>"; //output the product name
+                      echo "<strong>Address: </strong>$address1"; 
                       echo "</p>";
-                      echo "$shortdescription"; //output the product short desc
+                      echo "<div id=\"shortDescription\">
+                      <strong>Short Description: </strong>$shortdescription</div>"; 
                       echo "</p>";
                       setlocale(LC_MONETARY, 'nl_NL.UTF-8');
-                      $displayPrice = number_format($price, 2, ',', '.');
-                      echo "€ $displayPrice"; //output the product short desc
+                      $displayPrice = number_format($price, 2, '.', ',');
+                      echo "<strong>Price: </strong> € $displayPrice";
                       echo "</p>"
                     ?>
                     <div class="detailslink">
                       <?php echo "<a href='template.php?propertyid=$propertyid&pageName=propertyDetails'><button>More Details</button></a>";?>
                       <br><br>
-                    </div><!--close detailslink-->
-                  </div><!--close the card-body-->
-                </div><!--close the card-->
-              </div><!--close the column-->
+                    </div>
+                  </div>
+                </div>
+              </div>
               <?php
-            if(($counter % $cols) == 0) { // If it's last column in each row then counter remainder will be zero
-              echo "</div>"; //close the row
+            if(($counter % $cols) == 0) { 
+              echo "</div>"; 
             }
-            $counter++; // increase the counter
-          } //end of while loop
-        } //end if
-        echo"</div><br><br>"; //close the last row and add some space
-        mysqli_free_result($result); //free the memory associated with result
-        //close database
+            $counter++; 
+          } 
+        } 
+        echo"</div><br><br>"; 
+        mysqli_free_result($result);
         mysqli_close($link); ?>
-    </div><!--close displayProperties div-->
-  </div><!--close content div-->
+  </div>
 </html>

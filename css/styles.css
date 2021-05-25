@@ -1,7 +1,7 @@
 /*----------------------------------------------container and body---------------------------------------------*/
 #container{
   margin: auto; /*center page*/
-  width: 70%; /*width of the page*/
+  width: 85%; /*width of the page*/
 	background-color: #9DB9E7; /*background color of the div(container)*/
 	border: 10px solid #9DB9E7; /*setting border (width/ style/color)*/
   font-family: sans-serif; /*font of the div(container)*/
@@ -27,7 +27,7 @@ body{background-color: #ffffff; } /*body background color*/
 /*---------------------------------------------nav (menu options)--------------------------------------------------*/
 
 .topnav {
-  /*if content overflows an element's box
+  /*if content overflows an element's box,
   overflow is clipped, and the rest of the content is hidden 
   for div(topnav)*/
   overflow: hidden; 
@@ -81,16 +81,11 @@ body{background-color: #ffffff; } /*body background color*/
 }
 
 .dropdown-content a:hover {
-  background-color: #b5c5ed; /*set background color when hover a link*/
   color: #000000; /*setting color*/
 }
 
 .dropdown:hover .dropdown-content {
   display: block; /*display in block*/
-}
-
-.active a:active { /* pseudo-classes - color of navegation links on the left when the link is visited*/
-  background-color: #9DB9E7;
 }
 
 /*----------------------------------------------Content---------------------------------------------*/
@@ -100,22 +95,29 @@ body{background-color: #ffffff; } /*body background color*/
 	min-height: 400px; /*setting a minimum height for div(content)*/
 }
 
+#content{
+  min-height: 400px; /*setting a minimum height for div(content)*/
+}
+
 .content h2{
-  margin:0%;
+  margin:0%; /*no margin*/
 }
 
 .content a {
-  color: black;
   text-decoration: none; /*remove underlines from links*/
+  color: #000000;
 }
 
 #testimonialH2 h2, #enquiriesH2 h2 {
-  padding-bottom: 16px;
+  padding-bottom: 16px; /*setting padding bottom*/
 }
 
 .newrow{
-  overflow: hidden; 
-  margin-left: 3%; 
+  /*Content is clipped 
+  and no scrolling mechanism should be provided 
+  to view the content outside the clipping region.*/
+  overflow:hidden; 
+  margin-left: 3%;/*adding a left margin*/
 }
 
 .col {
@@ -125,21 +127,22 @@ body{background-color: #ffffff; } /*body background color*/
 }
 
 .card {
-  background-color: white; 
-  text-align: center;
-  min-height: 400px;
+  background-color: white; /*set background color*/
+  text-align: center; /*align text*/
+  min-height: 400px; /*set minimum height value*/
 }
 
 #img{
-  height: 200px;
+  height: 200px; /*set height*/
 }
 
 hr{
-  margin: 1px;
+  margin: 1px;/*setting margin for horizontal line*/
 }
 
 .card-body{
-  padding: 5px;
+  padding: 5px; /*set padding*/
+  min-height: 290px; /*set minimum height*/
 }
 
 .dataTable {
@@ -148,95 +151,89 @@ hr{
 }
 
 .table th {
-  background-color: #090C9B;
-  color: #ffffff;
-  border: 2px solid #9DB9E7;
-  padding: 5px;
+  background-color: #090C9B; /*set background color*/
+  color: #ffffff;/*set color*/
+  border: 2px solid #9DB9E7;/*setting border (width/ style/color)*/
+  padding: 5px;/*set padding*/
 }
 
 .table td {
   background-color: #ffffff;
-  border: 2px solid #9DB9E7;
-  padding: 5px 10px 5px 10px;
+  border: 2px solid #9DB9E7;/*setting border (width/ style/color)*/
+  padding: 5px 10px 5px 10px;/*set padding*/
 }
 
 .form label{
-  float:left;
-  width:50px;
-  padding-right:15px;
+  float:left; /*float left*/
+  width:50px; /*setting width*/
+  padding-right:15px;/*setting right paddind value*/
 }
 
-.form input{
-  width:248px;
-  margin-bottom: 3px;
+.form input, .form select, .form textarea{
+  width:255px; /*setting width*/
+  margin-bottom: 3px; /*setting bottom margin*/
 }
 
 #mysubmit{
-  margin-left: 65px;
-  width:100px;
+  margin-left: 65px; /*setting left margin to align submit button*/
+  width:100px; /*setting width*/
 }
 
 #companyContact {
-  margin-right: 5px;
+  margin-right: 5px;/*setting margin right*/
 }
-#companyContact a {
-  color:#090C9B;
+#companyContact a, #vendorContact a {
+  color:#090C9B; /*change color of links*/
 }
 
 #companyLocationImg {
-  float: right;
-  width: 250px;
-  height: 150px;
-  padding-right: 300px;
+  float: right; /*float right*/
+  width: 250px; /*setting width*/
+  height: 150px; /*setting height*/
+  padding-right: 300px; /*setting right paddind value*/
 }
 
 .loginForm {
-  text-align:center;
-  margin: 100px auto;
-  padding: 17px 20px 25px 20px;
-  width: 200px;
-  background:url(../images/login.jpeg) 0 0 no-repeat;
+  text-align:center; /*align text*/
+  margin: 100px auto;/*top and bottom margins are 100px / right and left margins are auto*/
+  padding: 17px 20px 25px 20px; /*setting padding*/
+  width: 200px; /*setting width*/
+  background:url(../images/login.jpeg) no-repeat center top; /*background shorthand (setting image/repeat/position)*/
 }
 
 .loginForm input{
-  border: none;
+  border: none; /*no border*/
+  height: 20px; /*setting height*/
 }
 
 .adminLoggedIn a, .adminLoggedIn button{
-  width:150px;
-  color: #000000;
-  height: 30px;
+  width:150px; /*setting width*/
+  color: #000000; /*setting color*/
+  height: 30px; /*setting height*/
 }
 
 #logout button, #logout a{
-  color:#ffffff;
-  background-color: #090C9B;
-  width: 150px;
+  color:#ffffff; /*setting color*/
+  background-color: #090C9B; /*setting background color*/
+  width: 150px; /*setting width*/
 }
 
-.manageForm label {
-  color: #ffffff;
-  background-color: #090C9B;
-  width:83px;
-  margin-right:5px;
-  padding: 1.5px;
-}
-
-.managePropertyForm label{
-  color: #ffffff;
-  background-color: #090C9B;
-  width:90px;
-  margin-right:5px;
-  padding: 1.5px;
+.managePropertyForm label, .manageForm label {
+  color: #ffffff;  /*setting color*/
+  background-color: #090C9B; /*setting background color*/
+  width:90px; /*setting width*/
+  margin-right:5px; /*setting right margin*/
+  margin-bottom: 1px; /*setting bottom margin*/
+  text-align: center; /*align text*/
 }
 
 .managePropertyForm textarea{
-  width: 248px;
+  width: 255px; /*setting width*/
 }
 
 #updateButton{
-  margin-left: 91px;
-  width:100px;
+  margin-left: 110px; /*setting left margin*/
+  width:100px; /*setting width*/
 }
 
 /*----------------------------------------------footer---------------------------------------------*/
@@ -244,15 +241,80 @@ hr{
   background-color: #090C9B; /*set background color*/
   color: #ffffff; /*setting color*/
   height: 30px; /*setting height*/
-  margin-top: 25px;
+  margin-top: 25px; /*setting top margin*/
   padding: 10px; /*Set the padding for all four sides*/
 }
 
 #facebookLogo{
-  float:right; /*float(left) the div(facebookLogo)*/
+  float:right; /*float(right) the div(facebookLogo)*/
   margin-left: 15px; /*setting a margin(left) for div(facebookLogo)*/
 }
 
 #InstagramLogo{
-  float:right; /*float(left) the div(facebookLogo)*/
+  float:right; /*float(right) the div(InstagramLogo)*/
+}
+
+/*----------------------------------------styles for a mobile device 486px---------------------------------------------*/
+
+/* styles for a mobile device 486px*/
+@media only screen and (max-width:486px){
+  #container{
+    width: 95%; /*setting width */
+    height: 40%; /*setting height */
+    font-size: 70%; /*setting font size*/
+  }
+
+  .topnav a {
+    float: none; /*float(left)*/
+    font-size: 90%; /*font size*/
+    display:block /*display in block*/
+  }
+  
+  .dropdown {
+    float: none; /*setting float*/
+  }
+
+  .dropdown .dropbtn {
+    font-size: 90%;   /*font size*/ 
+  }
+
+  #shortDescription{
+    display: none; /*do not display short description*/
+  }
+
+  .card {
+    min-height: 250px; /*setting minimum height*/
+  }
+  .card-body{
+    min-height: 50px; /*setting minimum height*/
+  }
+
+  #img {
+    height: 100px; /*setting height*/
+  }
+
+  .content{
+    padding: 0px; /*setting padding*/
+  }
+
+  .content h2 {
+    margin-top: 15px; /*setting top margin*/
+  }
+
+  #companyLocationImg{
+    display: none; /*do not display the map image*/
+  }
+
+  button, #mysubmit{
+    font-size: inherit; /*setting size*/
+  }
+
+  #adminArea{
+    display: none; /*do not display administrator area*/
+  }
+
+  #displayProperties img{
+    height: auto; /*setting height*/
+    margin-top: 15px; /*setting top margin*/
+  }
 }

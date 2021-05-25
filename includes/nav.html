@@ -4,17 +4,15 @@
     <button class="dropbtn">Properties</button>
     <div class="dropdown-content">
       <a href="template.php?pageName=displayAllProperties">All Properties</a>
-      <a href="template.php?pageName=displayResidentialProperties&categoryid=1">Residential Properties</a>
-      <a href="template.php?pageName=displayCommercialProperties&categoryid=2">Commercial Properties</a>
-      <a href="template.php?pageName=displaySites&categoryid=3">Sites</a>
+      <a href="template.php?pageName=displayAllProperties&categoryid=1&name=Residential">Residential Properties</a>
+      <a href="template.php?pageName=displayAllProperties&categoryid=2&name=Commercial">Commercial Properties</a>
+      <a href="template.php?pageName=displayAllProperties&categoryid=3&name=Sites">Sites</a>
     </div>
   </div> 
   <a href="template.php?pageName=testimonials">Testimonials</a>
   <a href="template.php?pageName=contactUs">Contact Us</a>
-  <a href="template.php?pageName=adminLogin">Admin Area</a>
-  <a href="javascript:void(0);" onclick="myFunction()"></a>
+  <div id="adminArea"><a href="template.php?pageName=adminLogin">Admin Area</a></div>
 </div>
 
 <script src="includes/scripts.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+<script src="includes/sweetalert.js"></script>

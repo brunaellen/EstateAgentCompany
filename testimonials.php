@@ -41,7 +41,6 @@
     <div class="form">
       <h3>Add a Testimonial</h3>
       <p>Please leave your feedback on your experience of our site. We appreciate your feedback and take all your comments into consideration! </p>
-      <!--form for user to enter feedback -->
       <form method="post" action="testimonialSubmitted.php">
         <label>Title: </label>
         <input type="text" name="title" required="required"><br>

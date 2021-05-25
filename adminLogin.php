@@ -2,7 +2,7 @@
 <html lang="en">
   <div id="content">
     <?php
-      if (empty($_SESSION)) /* if session is empty, then start a session */
+      if (empty($_SESSION)) 
         session_start();
 
       if (isset($_SESSION['username'])) {
@@ -10,7 +10,7 @@
         exit;
       }
       
-      if (isset($_SESSION['errors'])) { /* if session is setted with variable(errors), then print error message*/
+      if (isset($_SESSION['errors'])) { 
         echo "<div class='form-errors'>";
         foreach($_SESSION['errors'] as $error){
           echo "<p>";
@@ -34,6 +34,5 @@
         </p>
       </form>
     </div>
-
   </div>
 </html>

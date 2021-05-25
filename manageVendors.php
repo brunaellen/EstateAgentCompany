@@ -7,7 +7,7 @@
     </p>
     <?php
       require 'connect.php';
-      $sql="SELECT * from vendor";
+      $sql="SELECT * from vendor ORDER BY vendorid ASC;";
       $result=mysqli_query($link, $sql); 
 
       if (isset($_GET["vendorAdded"])) {

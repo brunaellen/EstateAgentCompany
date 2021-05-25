@@ -4,7 +4,7 @@
     <div id="enquiriesH2"><h2>View Enquiries Submitted</h2></div>
     <?php
       require 'connect.php';
-      $sql="SELECT * from enquiry";
+      $sql="SELECT * from enquiry ORDER BY id ASC;";
       $result=mysqli_query($link, $sql); 
     ?>
 
@@ -19,6 +19,7 @@
           <th>Author</th>
           <th>Email</th>
           <th>Created</th>
+          <th>Delete</th>
           </tr>";
 
           while($row=mysqli_fetch_array($result)){
@@ -35,14 +36,18 @@
             <td>$author</td>
             <td>$email</td>
             <td>$created</td>
+            <td> <button><a href='processDeleteEnquiries.php?id=$id'>Delete</a></button></td>
             </tr>";
           }
           echo "</table>";
         } else {
-          echo("there are currently no Enquiries in the database");
+          echo("There are currently no Enquiries in the database");
         }
       mysqli_close($link);
       ?>
+      <p>
+      <button onclick="goBack('template.php?pageName=adminLoggedIn')">Go Back</button>
+      </p>
     </div>
   </div>
 </html>

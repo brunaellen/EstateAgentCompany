@@ -35,8 +35,10 @@
         echo "<h3>Description:</h3>"; 
         echo "$longdescription";
         echo "</p>";
-        echo "<h3>Price:</h3>"; 
-        echo "$price"; 
+
+        setlocale(LC_MONETARY, 'nl_NL.UTF-8');
+        $displayPrice = number_format($price, 2, ',', '.');
+        echo "<strong>Price: </strong> € $displayPrice"; 
         echo "</p>";
         echo "<h3>Vendor's Details:</h3>"; 
         echo "Name: "; 
@@ -44,10 +46,12 @@
         echo "$surname"; 
         echo "</p>";
         echo "Telephone: "; 
-        echo "$mobile"; 
+        echo "<div id=vendorContact>";
+        echo "<a href=\"tel:$mobile\">$mobile</a><p>"; 
         echo "</p>";
         echo "email: "; 
-        echo "$email"; 
+        echo "<a href = \"mailto:$email\">$email</a>"; 
+        echo "</div>";
         echo "</p>";
         mysqli_close($link);
       ?>

@@ -1,10 +1,10 @@
 
 <?php
   require 'connect.php';
-  $title=$_POST["title"];
-  $content=$_POST["content"];
-  $author_name=$_POST["author_name"];
-  $email=$_POST["author_email"];
+  $title=mysqli_real_escape_string($link, $_POST["title"]);
+  $content=mysqli_real_escape_string($link, $_POST["content"]);
+  $author_name=mysqli_real_escape_string($link, $_POST["author_name"]);
+  $email=mysqli_real_escape_string($link, $_POST["author_email"]);
   $sql_insert="INSERT INTO enquiry(title, content, author_name, author_email)
   VALUES ('$title', '$content', '$author_name', '$email')";
 

@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <div id="content">
+    
     <h2>Contact Us</h2>
     <div id="companyLocationImg">
-    <a href="https://www.google.com/maps/@54.2712546,-8.5058037,15z"><img src="images/map.png" width="100%" height="100%"></a>
-      
+      <a href="https://www.google.com/maps/@54.2712546,-8.5058037,15z"><img src="images/map.png" width="100%" height="100%"></a>
     </div>
+
     <div id="companyContact">
       <p>Brunas Estate Agents</p>
       <p>14 Orchard Green</p>

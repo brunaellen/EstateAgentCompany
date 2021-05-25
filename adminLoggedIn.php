@@ -15,7 +15,7 @@
         <p><button><a href='template.php?pageName=manageVendors'>Manage Vendors</a></button>
         <p><button><a href='template.php?pageName=viewEnquiries'>View Enquiries</a></button>
   </div>";
-        echo "<div id=\"logout\" style=\"color:white\"><button><a href='logout.php'>Logout</a></button></div>";
+        echo "<div id=\"logout\"><button><a href='logout.php'>Logout</a></button></div>";
       }
     ?>
 </div>

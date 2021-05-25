@@ -53,11 +53,31 @@
           <label> Image:</label>
           <input type="text" name="image" value="<?php echo $image; ?>" required="required"><br>
           
-          <label>Category Id:</label>
-          <input type="number" name="categoryid" value="<?php echo $categoryid; ?>"><br>
+          <label>Category:</label>
+          <select id="category" name="categoryid" required="required">
+            <option value="1" <?php if ($categoryid == 1) echo "selected=\"true\"" ?>>Residential</option>
+            <option value="2" <?php if ($categoryid == 2) echo "selected=\"true\"" ?>>Commercial</option>
+            <option value="3" <?php if ($categoryid == 3) echo "selected=\"true\"" ?>>Sites</option>
+          </select><br>
 
-          <label>Vendor Id:</label>
-          <input type="number" name="vendorid" value="<?php echo $vendorid; ?>"><br>
+          <label>Vendor:</label>
+          <select id="vendor" name="vendorid" required="required">
+          <?php
+            require 'connect.php';
+            $sql="SELECT * from vendor ORDER BY firstname";
+            $result=mysqli_query($link, $sql); 
+            while($row=mysqli_fetch_array($result)){
+              $dbVendorId = $row["vendorid"];
+              $dbVendorFirstName = $row["firstname"];
+              $dbVendorSurname = $row["surname"];
+              if($vendorid == $dbVendorId){
+                echo "<option value=\"$dbVendorId\" selected=\"true\">$dbVendorFirstName $dbVendorSurname</option>";
+              } else {
+                echo "<option value=\"$dbVendorId\">$dbVendorFirstName $dbVendorSurname</option>";
+              }
+            }
+          ?>
+          </select> <br>
           
           <input type="submit" id="updateButton" name="updateButton" value="Update" required="required">
         </form>

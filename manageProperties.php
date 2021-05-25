@@ -7,7 +7,8 @@
     </p>
     <?php
       require 'connect.php';
-      $sql="SELECT * from property";
+      $sql="SELECT p.*, v.firstname, v.surname, c.categoryname from property p LEFT JOIN category c ON c.categoryId = p.categoryId LEFT JOIN vendor v ON v.vendorid = p.vendorid
+      ORDER BY p.propertyid ASC";
       $result=mysqli_query($link, $sql); 
 
       if (isset($_GET["propertyAdded"])) {
@@ -25,9 +26,6 @@
           echo "<tr>
           <th width=\"10%\">Property Id</th>
           <th>Data</th>
-          <th width=\"10%\">Price</th>
-          <th width=\"10%\">Category Id</th>
-          <th width=\"10%\">Vendor Id</th>
           <th width=\"10%\">Update</th>
           <th width=\"10%\">Delete</th>
           </tr>";
@@ -41,9 +39,13 @@
             $town=$row["town"];
             $county=$row["county"];
             $price=$row["price"];
-            $categoryid=$row["categoryid"];
-            $vendorid=$row["vendorid"];
+            $category=$row["categoryname"];
+            $vendorSurname=$row["surname"];
+            $vendorFirstname=$row["firstname"];
 
+            setlocale(LC_MONETARY, 'nl_NL.UTF-8');
+            $displayPrice = number_format($price, 2, '.', ',');
+            
             echo "<tr>
             <td>$propertyid</td>
             <td>
@@ -52,11 +54,11 @@
               <strong>Long Description: </strong>$longdescription <br/><p>
               <strong>Address: </strong>$address1 <br/><p>
               <strong>Town: </strong>$town<br/><p>
-              <strong>County: </strong>$county<br/>
+              <strong>County: </strong>$county<br/></p>
+              <strong>Price: </strong> € $displayPrice</p>
+              <strong>Category: </strong>$category<br/><p>
+              <strong>Vendor: </strong>$vendorFirstname $vendorSurname<br/><p>
             </td>
-            <td>$price</td>
-            <td>$categoryid</td>
-            <td>$vendorid</td>
             <td> <button><a href='template.php?pageName=editProperty&id=$propertyid'>Edit</a></button></td>
             <td> <button><a href='template.php?pageName=deleteProperty&id=$propertyid'>Delete</a></button></td>
             </tr>";
@@ -71,6 +73,5 @@
     <p>
       <button onclick="goBack('template.php?pageName=adminLoggedIn')">Go Back</button>
     </p>
-    <script src="includes/scripts.js"></script>
   </div>
 </html>

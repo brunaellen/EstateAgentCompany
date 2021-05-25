@@ -20,12 +20,6 @@
             include("index.php");
           } elseif($_GET["pageName"] == "displayAllProperties"){
             include("displayAllProperties.php");
-          } elseif ($_GET["pageName"] == "displayResidentialProperties") {
-            include("displayResidentialProperties.php");
-          } elseif ($_GET["pageName"] == "displayCommercialProperties") {
-            include("displayCommercialProperties.php");
-          } elseif ($_GET["pageName"] == "displaySites") {
-            include("displaySites.php");
           } elseif ($_GET["pageName"] == "propertyDetails") {
             include("propertyDetails.php");
           } elseif ($_GET["pageName"] == "testimonials") {
@@ -68,10 +62,8 @@
             echo "Page Content goes here......";
           }
         ?>
-         
+        <?php include("includes/footer.html");?>  
       </div>
-      <?php include("includes/footer.html");?> 
     </div>
   </body>
-
 </html>
