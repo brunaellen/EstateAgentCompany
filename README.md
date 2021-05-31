@@ -1,6 +1,6 @@
 # EstateAgentCompany
 
-## College project (Internet Applications Development module):
+## College project (Internet Applications & Development module):
 
  I designed and developed a database-driven website for a company that advertises real estate for sale.
  
