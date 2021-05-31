@@ -8,9 +8,13 @@ College project (Internet Applications Development module):
  The application has as a main feature the following functionality:
  
 • dynamically generated property
+
 • dynamically generated testimonials page
+
 • retrieve data from multiple tables
+
 • login for administrator to control access to certain parts of the site(manage testimonial/properties/vendors/enquiries)
+
 • functionality for administrator to view/edit/delete database entries such as
 properties/testimonials/vendors
 
