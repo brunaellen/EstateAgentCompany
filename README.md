@@ -1,4 +1,4 @@
-# EstateAgentCompany
+# Estate Agent Company
 
 ## College project (Internet Applications & Development module):
 
